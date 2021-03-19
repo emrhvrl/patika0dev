@@ -1,0 +1,31 @@
+# Bir listeyi düzleştiren (flatten) fonksiyon yazın.
+
+def duzFonk(liste):
+    duzListe = []
+    while liste: 
+        e = liste.pop()
+        if type(e) == list: 
+            liste.extend(e) 
+        else:
+            duzListe.append(e) 
+    duzListe.reverse()     
+    return duzListe 
+    
+liste = [[1,'a',['cat'],2],[[[3]],'dog'],4,5]
+duzFonk(liste)
+    
+#Verilen listenin içindeki elemanları tersine döndüren bir fonksiyon yazın. 
+#Eğer listenin içindeki elemanlar da liste içeriyorsa onların elemanlarını da tersine döndürün.
+
+def donFonk(listem):
+    yeniListem = []
+    while listem:
+        e = listem.pop()
+        v = e[::-1]
+        yeniListem.append(v)
+        
+    return yeniListem
+    
+    
+ listem = [[1, 2], [3, 4], [5, 6, 7]]
+ donFonk(listem)
